@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Music Trivia!!</title>
+    <link rel="stylesheet" href="music_trivia.css">
+</head>
+<body>
+    <nav>
+        <img src="logo.png" alt="logo"/>
+    </nav>
+    <section id="session" class="visible">
+        <div>
+            <button onclick="onStartSession()">Start session</button>
+            <img src="logo.png" alt="logo"/>
+            <form class="inline-form">
+                <input id="sessionId" type="text" placeholder="session id" required />
+                <button class="button-form" onclick="onEnterSession(event)">Enter</button>
+            </form>
+        </div>
+    </section>
+    <section id="player" class="hidden">
+        <div>
+            <span>Type your player name</span>
+            <form class="inline-form">
+                <input id="playerName" type="text" placeholder="name" required />
+                <button class="button-form" onclick="onEnterPlayerName(event)">Enter</button>
+            </form>
+        </div>
+    </section>
+    <section id="music-provider" class="hidden">
+        <div>
+            <span>Use your music provider</span>
+            <div>
+                <div class="spotify-provider-button" onclick="selectMusicProvider('spotify')">
+                    <img src="./Spotify_Logo_RGB_Green.png" alt="Spotify" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="reception" class="hidden">
+        <div>
+            <div class="title">
+                <button id="start-button" onclick="startGame()" class="hidden">Start game</button>
+                <a onclick="copySessionLink()">Copy session link</a>
+            </div>
+            <div>
+                <h1>Players</h1>
+                <ul id="players-list"></ul>
+            </div>
+        </div>
+    </section>
+    <section id="question" class="hidden">
+        <div>
+            <div class="column">
+                <div class="row">
+                    <img id="album" src="">
+                    <div class="column">
+                        <span id="title"></span>
+                        <span id="singer"></span>
+                    </div>
+                </div>
+                <div class="column">
+                    Who likes to listen this song?
+                    <span id="instructions" class="hidden">Select an option to continue</span>
+                    <ul id="options"></ul>
+                </div>
+                <div class="row">
+                    <button id="next-question" onclick="nextQuestion();">Answer</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
